@@ -7,9 +7,8 @@
   --brand: #0f7a68;
   --brand-deep: #0a5c4f;
   --secondary: #2c4a42;
-  --secondary-soft: rgba(44, 74, 66, 0.08);
   --surface: rgba(255, 255, 255, 0.55);
-  --shadow: 0 10px 28px rgba(15, 58, 50, 0.12);
+  --shadow: 0 10px 28px rgba(15, 58, 48, 0.12);
   --radius: 18px;
   --max: 420px;
   --font-display: "Fraunces", "Georgia", serif;
@@ -66,7 +65,7 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.65rem;
   animation: rise-in 0.7s ease-out both;
 }
 
@@ -74,12 +73,11 @@ body::before {
   width: 104px;
   height: 104px;
   border-radius: 50%;
-  background:
-    linear-gradient(145deg, #b8d9cf 0%, #7fb5a6 100%);
+  background: linear-gradient(145deg, #b8d9cf 0%, #7fb5a6 100%);
   box-shadow: var(--shadow);
   display: grid;
   place-items: center;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
   animation: soft-pulse 4.5s ease-in-out infinite;
 }
 
@@ -102,8 +100,17 @@ body::before {
   color: var(--ink);
 }
 
-.bio {
+.role {
   margin: 0;
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.bio {
+  margin: 0.25rem 0 0;
   max-width: 22rem;
   font-size: 0.98rem;
   line-height: 1.55;
@@ -125,7 +132,6 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
   width: 100%;
   min-height: 3.35rem;
   padding: 0.9rem 1.25rem;
