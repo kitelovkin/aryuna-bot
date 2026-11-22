@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Арюна Николаевна — нутрициолог. Запись на консультацию по ЖКТ, дефицитам и питанию."
+    />
+    <title>Арюна Николаевна</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opszlwght@9..144,500;9..144,650&family=Manrope:wght@500;650&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div class="avatar" aria-hidden="true">
+          <span class="avatar-initials">АН</span>
+        </div>
+        <h1 class="brand">Арюна Николаевна</h1>
+        <p class="bio">
+          Лечу заболевания ЖКТ, корректирую дефициты, питание и образ жизни
+        </p>
+      </header>
+
+      <nav class="actions" aria-label="Ссылки">
+        <a
+          id="btn-bot"
+          class="btn btn-primary"
+          href="https://t.me/dc_aryuna_bot"
+          rel="noopener noreferrer"
+        >
+          📝 Записаться на консультацию
+        </a>
+        <a
+          id="btn-channel"
+          class="btn btn-secondary"
+          href="https://t.me/your_channel"
+          rel="noopener noreferrer"
+        >
+          ✈️ Мой Telegram-канал
+        </a>
+      </nav>
+
+      <p class="foot-note">Онлайн-консультации · предзапись в Telegram</p>
+    </main>
+
+    <script src="config.js"></script>
+    <script>
+      (function () {
+        var cfg = window.ARYUNA_CONFIG || {};
+        var bot = document.getElementById("btn-bot");
+        var channel = document.getElementById("btn-channel");
+        if (bot && cfg.BOT_URL) bot.href = cfg.BOT_URL;
+        if (channel && cfg.CHANNEL_URL) channel.href = cfg.CHANNEL_URL;
+      })();
+    </script>
+  </body>
+</html>
