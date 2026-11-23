@@ -20,6 +20,8 @@
       --sky-a: #e8f3ff;
       --sky-b: #d7e9fb;
       --sky-ink: #1f4f7a;
+      --ig-a: #f77737;
+      --ig-b: #e1306c;
       --threads-a: #1a1a1a;
       --threads-b: #3a3a3a;
       --shadow: 0 12px 30px rgba(47, 84, 68, 0.10);
@@ -138,6 +140,20 @@
       box-shadow: 0 14px 28px rgba(47, 84, 68, 0.14);
     }
     .btn:active { transform: scale(0.99); }
+    .btn-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: left;
+    }
+    .btn-icon {
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    .btn-text { min-width: 0; }
     .btn .title {
       display: block;
       font-size: 1.02rem;
@@ -166,6 +182,12 @@
     }
     .btn-telegram .sub { color: #5f7388; opacity: 1; }
 
+    .btn-instagram {
+      background: linear-gradient(135deg, var(--ig-a), var(--ig-b));
+      color: #fff;
+    }
+    .btn-instagram .sub { color: rgba(255,255,255,0.92); }
+
     .btn-threads {
       background: linear-gradient(135deg, var(--threads-a), var(--threads-b));
       color: #fff;
@@ -185,6 +207,7 @@
     .d5 { animation-delay: 0.40s; }
     .d6 { animation-delay: 0.50s; }
     .d7 { animation-delay: 0.60s; }
+    .d8 { animation-delay: 0.70s; }
 
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
@@ -208,16 +231,40 @@
 
       <nav class="actions" aria-label="Ссылки">
         <a class="btn btn-primary fade d5" href="https://t.me/dc_aryuna_bot" rel="noopener noreferrer" target="_blank">
-          <span class="title">📝 Записаться на консультацию</span>
-          <span class="sub">выбрать свободное время</span>
+          <span class="btn-inner">
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M8 3.5v3.5M16 3.5v3.5M3.5 10h17"/><path d="M8 14h3M13 14h3M8 17.5h3"/></svg>
+            <span class="btn-text">
+              <span class="title">Записаться на консультацию</span>
+              <span class="sub">выбрать свободное время</span>
+            </span>
+          </span>
         </a>
         <a class="btn btn-telegram fade d6" href="https://t.me/AgentDouctor" rel="noopener noreferrer" target="_blank">
-          <span class="title">✈️ Мой Telegram-канал</span>
-          <span class="sub">Честно про здоровье, анализы и ЖКТ</span>
+          <span class="btn-inner">
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21.8 4.3c.3-.1.6.2.5.5L18.3 20c-.1.3-.4.4-.7.3l-5.3-2.1-2.7 2.6c-.3.3-.8.1-.9-.3l-.6-4.8 9.7-8.6c.2-.2 0-.5-.2-.3L6.4 14.6 2.1 13c-.4-.1-.4-.6 0-.8L21.8 4.3z"/></svg>
+            <span class="btn-text">
+              <span class="title">Мой Telegram-канал</span>
+              <span class="sub">Честно про здоровье, анализы и ЖКТ</span>
+            </span>
+          </span>
         </a>
-        <a class="btn btn-threads fade d7" href="https://www.threads.net/@doctoraryuna" rel="noopener noreferrer" target="_blank">
-          <span class="title">🧵 Мой Threads</span>
-          <span class="sub">Будни врача и заметки про ЖКТ</span>
+        <a class="btn btn-instagram fade d7" href="https://www.instagram.com/doctoraryuna" rel="noopener noreferrer" target="_blank">
+          <span class="btn-inner">
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+            <span class="btn-text">
+              <span class="title">Мой Instagram</span>
+              <span class="sub">Полезные рилс и будни врача</span>
+            </span>
+          </span>
+        </a>
+        <a class="btn btn-threads fade d8" href="https://www.threads.net/@doctoraryuna" rel="noopener noreferrer" target="_blank">
+          <span class="btn-inner">
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.5 10.1c-.1-2.5-1.5-4.2-4.1-4.3-2.9-.1-4.7 1.8-4.7 4.9 0 3.4 1.9 5.3 5.1 5.3 1.7 0 3.1-.4 4.4-1.3l-.7-1.7c-1 .6-2 1-3.5 1-2.1 0-3.3-1.1-3.4-3.1.8.5 1.8.7 2.9.7 2.8 0 4.6-1.5 4.8-4.1.1-.9 0-1.7-.3-2.4.6.4 1.1 1 1.3 1.8l1.9-.7c-.4-1.4-1.4-2.6-2.8-3.3C15.3 3.7 13.7 3.2 12 3.2 7.9 3.2 5 6.1 5 10.7c0 4.8 3.1 7.9 7.7 7.9 1.9 0 3.6-.5 5-1.4v-6.2c0-1.2-.4-2.1-1.2-2.6-.4.6-.7 1.3-.7 2.1l.7-.4zm-3.9-1.4c-.9 0-1.7-.2-2.3-.6.1-1.4.9-2.3 2.2-2.3 1.2 0 1.9.8 2 2.1-.5.5-1.2.8-1.9.8z"/></svg>
+            <span class="btn-text">
+              <span class="title">Мой Threads</span>
+              <span class="sub">Будни врача и заметки про ЖКТ</span>
+            </span>
+          </span>
         </a>
       </nav>
     </section>
